@@ -128,6 +128,8 @@ class DockerContainer(object):
         return self._docker
 
     def get_logs(self):
+        if not self._container:
+            raise ContainerStartException("Container should be started before")
         return self._container.logs(stderr=False), self._container.logs(stdout=False)
 
     def exec(self, command):

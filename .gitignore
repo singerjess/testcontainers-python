@@ -66,5 +66,3 @@ docs/_build/
 
 # Mac env
 .DS_Store
-pyenv.cfg"
-.python-version

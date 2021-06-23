@@ -1,5 +1,3 @@
-import subprocess
-
 from deprecation import deprecated
 from docker.models.containers import Container
 

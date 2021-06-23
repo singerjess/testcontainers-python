@@ -63,3 +63,8 @@ docs/_build/
 .idea/
 .venv/
 .testrepository/
+
+# Mac env
+.DS_Store
+pyenv.cfg"
+.python-version

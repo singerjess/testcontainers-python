@@ -1,3 +1,5 @@
+import subprocess
+
 from deprecation import deprecated
 from docker.models.containers import Container
 
@@ -127,7 +129,11 @@ class DockerContainer(object):
     def get_docker_client(self) -> DockerClient:
         return self._docker
 
+    def get_logs(self):
+        return self._container.logs(stderr=False), self._container.logs(stdout=False)
+
     def exec(self, command):
         if not self._container:
             raise ContainerStartException("Container should be started before")
         return self.get_wrapped_container().exec_run(command)
+

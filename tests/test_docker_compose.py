@@ -35,9 +35,9 @@ def test_compose_wait_for_container_ready():
         compose.wait_for("http://%s:4444/wd/hub" % docker.host())
 
 
-def test_compose_wait_for_logs():
-    with DockerCompose("tests") as compose:
-        wait_for_logs(compose, "firefox")
+def test_compose_can_wait_for_logs():
+    with DockerCompose(filepath="tests", compose_file_name="docker-compose-4.yml") as compose:
+        wait_for_logs(compose, "Hello from Docker!")
 
 
 def test_can_parse_multiple_compose_files():
